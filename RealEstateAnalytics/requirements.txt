@@ -9,3 +9,5 @@ dash
 dash-daq
 dash-bootstrap-components
 whitenoise
+gunicorn
+django-heroku
