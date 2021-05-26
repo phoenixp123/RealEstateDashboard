@@ -1,1 +1,1 @@
-web: gunicorn AnalyticsApp.wsgi
+web: gunicorn RealEstateAnalytics.wsgi
