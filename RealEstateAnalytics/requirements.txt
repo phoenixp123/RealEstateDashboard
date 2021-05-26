@@ -1,0 +1,11 @@
+django
+django-plotly-dash
+channels
+pandas
+numpy
+bootstrap4
+dpd-static-support
+dash
+dash-daq
+dash-bootstrap-components
+whitenoise
