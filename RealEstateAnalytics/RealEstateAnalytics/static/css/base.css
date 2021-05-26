@@ -2,6 +2,7 @@
     DJANGO base styles
 */
 
+@import url(fonts.css);
 
 body {
     margin: 0;
@@ -351,15 +352,14 @@ table thead th.sorted .sortpriority {
     margin-right: 2px;
 }
 
-table thead th.sorted .sortoptions a {
-    position: relative;
-    width: 14px;
-    height: 14px;
-    display: inline-block;
-    /*
-    background: url(../img/sorting-icons.svg) 0 0 no-repeat;*/
-    background-size: 14px auto;
-}
+/*table thead th.sorted .sortoptions a {*/
+/*    position: relative;*/
+/*    width: 14px;*/
+/*    height: 14px;*/
+/*    display: inline-block;*/
+/*    background: url(../img/sorting-icons.svg) 0 0 no-repeat;*/
+/*    background-size: 14px auto;*/
+/*}*/
 
 table thead th.sorted .sortoptions a.sortremove {
     background-position: 0 0;
@@ -542,26 +542,26 @@ ul.messagelist {
     margin: 0;
 }
 
-ul.messagelist li {
-    display: block;
-    font-weight: 400;
-    font-size: 13px;
-    padding: 10px 10px 10px 65px;
-    margin: 0 0 10px 0;
-    /*background: #dfd url(../img/icon-yes.svg) 40px 12px no-repeat;
-    background-size: 16px auto;*/
-    color: #333;
-}
+/*ul.messagelist li {*/
+/*    display: block;*/
+/*    font-weight: 400;*/
+/*    font-size: 13px;*/
+/*    padding: 10px 10px 10px 65px;*/
+/*    margin: 0 0 10px 0;*/
+/*    background: #dfd url(../img/icon-yes.svg) 40px 12px no-repeat;*/
+/*    background-size: 16px auto;*/
+/*    color: #333;*/
+/*}*/
 
-ul.messagelist li.warning {
-    /*background: #ffc url(../img/icon-alert.svg) 40px 14px no-repeat;*/
-    background-size: 14px auto;
-}
+/*ul.messagelist li.warning {*/
+/*    background: #ffc url(../img/icon-alert.svg) 40px 14px no-repeat;*/
+/*    background-size: 14px auto;*/
+/*}*/
 
-ul.messagelist li.error {
-    /*background: #ffefef url(../img/icon-no.svg) 40px 12px no-repeat;*/
-    background-size: 16px auto;
-}
+/*ul.messagelist li.error {*/
+/*    background: #ffefef url(../img/icon-no.svg) 40px 12px no-repeat;*/
+/*    background-size: 16px auto;*/
+/*}*/
 
 .errornote {
     font-size: 14px;
@@ -662,25 +662,25 @@ div.breadcrumbs a:focus, div.breadcrumbs a:hover {
 
 /* ACTION ICONS */
 
-.viewlink, .inlineviewlink {
-    padding-left: 16px;
-    /*background: url(../img/icon-viewlink.svg) 0 1px no-repeat;*/
-}
+/*.viewlink, .inlineviewlink {*/
+/*    padding-left: 16px;*/
+/*    background: url(../img/icon-viewlink.svg) 0 1px no-repeat;*/
+/*}*/
 
-.addlink {
-    padding-left: 16px;
-    /*background: url(../img/icon-addlink.svg) 0 1px no-repeat;*/
-}
+/*.addlink {*/
+/*    padding-left: 16px;*/
+/*    background: url(../img/icon-addlink.svg) 0 1px no-repeat;*/
+/*}*/
 
-.changelink, .inlinechangelink {
-    padding-left: 16px;
-    /*background: url(../img/icon-changelink.svg) 0 1px no-repeat;*/
-}
+/*.changelink, .inlinechangelink {*/
+/*    padding-left: 16px;*/
+/*    background: url(../img/icon-changelink.svg) 0 1px no-repeat;*/
+/*}*/
 
-.deletelink {
-    padding-left: 16px;
-    /*background: url(../img/icon-deletelink.svg) 0 1px no-repeat;*/
-}
+/*.deletelink {*/
+/*    padding-left: 16px;*/
+/*    background: url(../img/icon-deletelink.svg) 0 1px no-repeat;*/
+/*}*/
 
 a.deletelink:link, a.deletelink:visited {
     color: #CC3434;
@@ -747,13 +747,13 @@ a.deletelink:focus, a.deletelink:hover {
     padding-right: 26px;
 }
 
-.object-tools a.viewsitelink, .object-tools a.golink {
-    /*background-image: url(../img/tooltag-arrowright.svg);*/
-}
+/*.object-tools a.viewsitelink, .object-tools a.golink {*/
+/*    background-image: url(../img/tooltag-arrowright.svg);*/
+/*}*/
 
-.object-tools a.addlink {
-    /*background-image: url(../img/tooltag-add.svg);*/
-}
+/*.object-tools a.addlink {*/
+/*    background-image: url(../img/tooltag-add.svg);*/
+/*}*/
 
 /* OBJECT HISTORY */
 
