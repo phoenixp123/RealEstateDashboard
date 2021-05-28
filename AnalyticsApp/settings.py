@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'channels',
+    'bootstrap4',
+    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
+    'dpd_static_support',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +55,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Adding additional MIDDLEWARE
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django_plotly_dash.middleware.BaseMiddleware',
+    'django_plotly_dash.middleware.ExternalRedirectionMiddleware',
 ]
 
 ROOT_URLCONF = 'AnalyticsApp.urls'
@@ -127,14 +137,45 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+
+# Adding ASGI Application
+ASGI_APPLICATION = 'AnalyticsApp.routing.application'
+#
 # To use home.html as default home page
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 # Define folder location of ‘static’ folder
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# ‘login_app_p2’: django app name
+# ‘django_dash’: django app name
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'AnalyticsApp', 'static'),
+    os.path.join(BASE_DIR,'AnalyticsApp', 'static'),
     ]
-
+# Static content of Plotly components that should
+# be handled by the Django staticfiles infrastructure
+PLOTLY_COMPONENTS = [
+    'dash_core_components',
+    'dash_html_components',
+    'dash_bootstrap_components',
+    'dash_renderer',
+    'dpd_components',
+    'dpd_static_support',
+]
+# Staticfiles finders for locating dash app assets and related files (Dash static files)
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django_plotly_dash.finders.DashAssetFinder',
+    'django_plotly_dash.finders.DashComponentFinder',
+    'django_plotly_dash.finders.DashAppDirectoryFinder',
+]
+# Channels config, to use channel layers
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379),],
+        },
+    },
+}
 django_heroku.settings(locals())
