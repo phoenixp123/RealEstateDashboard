@@ -1,82 +1,38 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-  <!-- Read css file from local static folder -->
-  <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
-
-<!-- Starting homepage funtionality -->
-
-  <title>Home</title>
 </head>
 <body>
 
-  <main>
+	<main>
+		<!-- If successful login -->
+		{% if user.is_authenticated %}
 
-    <!-- If successful login-->
+		<h1>Plotly Dash Integration in Django</h1>
+		<h3>Hi {{ user.username }} !</h3>
+		<h3>You are loged in now</h3>
+		<h3>Click below links</h3>
+		<a href="{% url 'dash_plot' %}">Dash Plots</a>
+		<br/>
+		<br/>
+		<a href="https://www.thinkinfi.com/2020/03/django-basic-login-logout-tutorial.html"">ThinkInfi</a>
+		<br/>
+		<br/>
+		<button onclick="window.location.href = '{% url 'logout' %}';">logout</button>
 
-  {% if user.is_authenticated %}
+		<!-- If not successful login -->
+		{% else %}
+		<h1>Plotly Dash Integration in Django</h1>
+		<h3>You are not logged in </h3>
+		<h3>Please login to continue</h3>
+		<h3>Click below links</h3>
+		<a href="#">Dash Plots</a>
+		<br/>
+		<br/>
+		<a href="#">ThinkInfi</a>
+		<br/>
+		<br/>
+		<button onclick="window.location.href = '{% url 'login' %}';">login</button>
 
-      <!-- Navbar Design Start if successfull login-->
+		{% endif %}
+	</main>
 
-      <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="https://www.thinkinfi.com/2020/03/django-basic-login-logout-tutorial.html" target="_blank">ThinkInfi</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="https://www.thinkinfi.com/2020/02/plot-stylish-map-in-dash-with-python.html" target="_blank">Dash tutorial</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Hi {{ user.username }} !</a></li>
-          <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-        </ul>
-        </div>
-      </nav>
-
-      <!-- Navbar Design End if successfull login-->
-
-      <p>Hi {{ user.username }}</p>
-      <br>
-      <p>  Welcome to The Sylish Dhango Application</p>
-
-
-  {% else %}
-
-    <!-- Navbar Design Start if not successfull login-->
-
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="">ThinkInfi</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="#">Dash Tutorial</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- Navbar Design End if not successfull login-->
-
-     <p>You are not logged in</p>
-     <br>
-     <p>  Please Login to continue...</p>
-
-  {% endif %}
-
-  </main>
 </body>
 </html>
