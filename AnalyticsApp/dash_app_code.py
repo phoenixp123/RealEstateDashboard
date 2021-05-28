@@ -11,7 +11,7 @@ df = px.data.gapminder().query("country=='India'")
 external_stylesheets=['https://codepen.io/amyoshino/pen/jzXypZ.css']
 
 # Important: Define Id for Plotly Dash integration in Django
-app = DjangoDash('dash_integration_id')
+app = DjangoDash('test_id')
 
 app.css.append_css({
 "external_url": external_stylesheets
