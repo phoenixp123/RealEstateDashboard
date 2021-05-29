@@ -178,4 +178,8 @@ CHANNEL_LAYERS = {
         },
     },
 }
+
+#dash plotly
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 django_heroku.settings(locals())
