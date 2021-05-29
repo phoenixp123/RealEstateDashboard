@@ -1,20 +1,88 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+
+<html lang="en-us" >
 <head>
-  <meta charset="utf-8">
-  <title>Login</title>
+<title>Log in | Django stylish app</title>
+
+<!-- Read css file from local static folder -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+
+
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+
+
+<meta name="robots" content="NONE,NOARCHIVE">
+
+
 </head>
-<body>
-  <main>
-  <h2>Login</h2>
-  <form method="post">
-    <!-- In Django csrf token needs to be provided before login form -->
-    <!-- For security reason it's mandatory in Django -->
-    {% csrf_token %}
-    <!-- import Default login form for Django -->
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
-  </main>
+
+
+<body class=" login"
+  data-admin-utc-offset="0">
+
+<!-- <div class="picture_div" style="margin:0px auto; text-align:center;">
+     <img src="https://srv4.imgonline.com.ua/result_img/imgonline-com-ua-resize-fP7BghMYRY4y.png" />
+</div> -->
+
+<!-- Container -->
+<div id="container">
+
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+
+            <h1 id="site-name"><a href="">Please login</a></h1>
+
+        </div>
+    </div>
+
+    <!-- END Header -->
+
+    <!-- Content  of login page-->
+
+    <div id="content" class="colM">
+
+    {% if form.errors %}
+    <p class="errornote">
+        Please enter the correct username and password for a staff account. Note that both fields may be case-sensitive.
+    </p>
+    {% endif %}
+
+
+
+<div id="content-main">
+
+    <form method="post" id="login-form">
+        {% csrf_token %}
+      <div class="form-row">
+
+        <label class="required" id="id_username">Username:</label> <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username">
+      </div>
+      <div class="form-row">
+
+        <label class="required" for="id_password">Password:</label> <input type="password" name="password" autocomplete="current-password" required id="id_password">
+        <input type="hidden" name="next">
+      </div>
+
+
+      <div class="submit-row">
+        <label>&nbsp;</label><input type="submit" value="Log in">
+      </div>
+    </form>
+
+</div>
+
+
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
 </body>
 </html>
