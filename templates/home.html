@@ -13,7 +13,7 @@
   <!-- Read css file from local static folder -->
   <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 
-<!-- Starting homepage funtionality -->
+<!-- Starting homepage functionality -->
 
   <title>Home</title>
 </head>
@@ -25,16 +25,16 @@
 
   {% if user.is_authenticated %}
 
-      <!-- Navbar Design Start if successfull login-->
+      <!-- Navbar Design Start if successful login-->
 
       <nav class="navbar navbar-inverse">
         <div class="container-fluid">
         <div class="navbar-header">
-          <p class="navbar-brand">RealInsights</p>
+          <p class="navbar-brand">Clark Real Estate</p>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><A href="home.html">Home</a></li>
-          <li><a href="https://www.thinkinfi.com/2020/02/plot-stylish-map-in-dash-with-python.html" target="_self">Dash tutorial</a></li>
+          <li class="active"><A href="{% url 'home' %}">Home</a></li>
+          <li><a href="https://github.com/phoenixp123/RealEstateDashboard" target="_self">Find the code here</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#"><span class="glyphicon glyphicon-user"></span> Hi {{ user.username }} !</a></li>
@@ -57,11 +57,11 @@
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="">ThinkInfi</a>
+          <a class="navbar-brand" href=>Clark Real Estate</a>
         </div>
         <ul class="nav navbar-nav">
           <li class="active"><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="#">Dash Tutorial</a></li>
+          <li><a href="https://github.com/phoenixp123/RealEstateDashboard">Find the code here</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
