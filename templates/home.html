@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
   <!-- Read css file from local static folder -->
   <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 
@@ -43,16 +42,23 @@
         </div>
       </nav>
 
-      <!-- Navbar Design End if successfull login-->
+      <!-- Navbar Design End if successful login-->
 
       <p>Hi {{ user.username }}</p>
       <br>
       <p>  Welcome to The Stylish Django Application</p>
 
+    <!-- display the graphs-->
+    <br>
+
+  {% autoescape off %}
+  {{ plot_div }}
+  {% endautoescape %}
+
 
   {% else %}
 
-    <!-- Navbar Design Start if not successfull login-->
+    <!-- Navbar Design Start if not successful login-->
 
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
