@@ -151,6 +151,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'AnalyticsApp', 'static'),
     ]
+
+
 # Static content of Plotly components that should
 # be handled by the Django staticfiles infrastructure
 PLOTLY_COMPONENTS = [
@@ -178,8 +180,5 @@ CHANNEL_LAYERS = {
         },
     },
 }
-
-#dash plotly
-X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 django_heroku.settings(locals())
