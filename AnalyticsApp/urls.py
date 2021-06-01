@@ -21,12 +21,13 @@ from django.views.generic import TemplateView
 from django.conf.urls.static import static
 from django.conf import settings
 
-from . import views
+from AnalyticsApp.views import SignUpView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # Using Django default authentication system
     path('', include('django.contrib.auth.urls')),
+    path('signup/', SignUpView.as_view(), name='signup'),
     # Call home.html from templates folder
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('state_listings', TemplateView.as_view(template_name='state_listings.html'), name='state_listings'),
