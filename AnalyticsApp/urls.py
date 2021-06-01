@@ -15,7 +15,7 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 
 from django.views.generic import TemplateView
 from django.conf.urls.static import static
@@ -27,4 +27,7 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     # Call home.html from templates folder
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('state_listings/', TemplateView.as_view(template_name='state_listings.html'), name='state_listings'),
+    #path('dashboard/', TemplateView.as_view(template_name=''), name='dashboard')
 ]
+
